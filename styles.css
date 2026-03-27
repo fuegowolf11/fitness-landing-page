@@ -1,32 +1,151 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   font-family: Arial, sans-serif;
-  margin: 0;
+  background: #1a1a1a;
+  color: #fff;
+  line-height: 1.6;
 }
+
+/* FIXED NAV */
 #header {
   position: fixed;
   top: 0;
   width: 100%;
-  background: #1a1a1a;
-  color: white;
+  background: #111;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.5);
 }
+
 #nav-bar {
   display: flex;
   justify-content: space-between;
-  padding: 1rem;
+  align-items: center;
+  padding: 1rem 5%;
+  max-width: 1200px;
+  margin: 0 auto;
 }
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #ff4500;
+}
+
+#nav-bar ul {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+
+#nav-bar a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+#nav-bar a:hover {
+  color: #ff4500;
+}
+
+/* HERO */
 #hero {
+  min-height: 100vh;
+  background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://picsum.photos/id/1015/2000/1200') center/cover no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
-  padding: 100px 20px;
+  padding: 0 5%;
+}
+
+#hero h1 {
+  font-size: 3.2rem;
+  margin-bottom: 1rem;
+}
+
+#hero p {
+  font-size: 1.3rem;
+  max-width: 700px;
+  margin-bottom: 2rem;
+}
+
+#form {
+  display: flex;
+  gap: 1rem;
+  max-width: 420px;
+  width: 100%;
+}
+
+#form input {
+  flex: 1;
+  padding: 1rem 1.5rem;
+  border: none;
+  border-radius: 50px;
+  font-size: 1.1rem;
+}
+
+#form button {
+  padding: 1rem 2.5rem;
   background: #ff4500;
   color: white;
-}
-#form input {
-  padding: 0.8rem;
-  width: 250px;
-}
-#form button {
-  padding: 0.8rem 1.5rem;
-  background: black;
-  color: white;
   border: none;
+  border-radius: 50px;
+  font-weight: bold;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+/* FEATURES */
+#features {
+  padding: 5rem 5%;
+  background: #222;
+  text-align: center;
+}
+
+#features h2 {
+  margin-bottom: 3rem;
+  font-size: 2.2rem;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.card {
+  background: #333;
+  padding: 2.5rem 1.5rem;
+  border-radius: 12px;
+  font-size: 1.2rem;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 3rem 5%;
+  background: #111;
+  font-size: 0.95rem;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  #nav-bar ul {
+    gap: 1.2rem;
+    font-size: 0.95rem;
+  }
+  #hero h1 {
+    font-size: 2.4rem;
+  }
+  #form {
+    flex-direction: column;
+  }
 }
